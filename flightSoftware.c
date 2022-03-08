@@ -571,7 +571,7 @@ void task(char statu[20], int *lastTimeMOSFET, int *lastTimeMOSFETControl, int *
 		
 		if(millis() > *lastTimeBUZZER + 60000){
 			
-			system("sudo ./buZZers");
+			system("sudo ./buzzer");
 			system("sudo killall verticalStabilization servod flightSoftware");
 			
 		}
