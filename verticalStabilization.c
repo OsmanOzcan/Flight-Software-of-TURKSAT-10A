@@ -22,16 +22,16 @@ int main()
 	float pid_roll_d = 0;
 
 	//Üst
-	float kp1 = 0.2;         //0.1
+	float kp1 = 0.25;         //0.1
 	float ki1 = 0.001;      //0.0011
-	float kd1 = 80;		 //400
+	float kd1 = 0.5;		 //400
 	
 	int control = 0;
 
 	//Alt
-	float kp2 = 0.2;  //0.25    //0.36
+	float kp2 = 0.25;  //0.25    //0.36
 	float ki2 = 0.001;  //0.007   //0.1
-	float kd2 = 75;     //6      //50
+	float kd2 = 0.45;     //6      //50
 
 	int freq = 40;
 	float throttle1 = 192;
