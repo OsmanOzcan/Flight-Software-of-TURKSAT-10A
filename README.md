@@ -28,3 +28,4 @@ gps.c,
 ina219sensor.c,
 ms5611.c are the scripts that reads sensor data.
 
+rc.local are script that makes all the software run autonomously .
