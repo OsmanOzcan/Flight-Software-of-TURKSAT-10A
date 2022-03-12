@@ -1,0 +1,33 @@
+#!/bin/bash
+
+sudo /home/pi/Desktop/TURKSAT/lowGpio
+
+sleep 30
+
+
+sudo raspivid -o - -t 0 -w 800 -h 400 -fps 24 | tee /home/pi/canligoruntu.h264 | cvlc -v stream:///dev/stdin --sout '#standard{access=http, mux=ts, dest=:8160' :demux=h264 &
+sudo /usr/bin/python3 /home/pi/Desktop/TURKSAT/commands.py &
+sudo /home/pi/Desktop/TURKSAT/bip
+
+sleep 20
+
+#sudo /home/pi/Desktop/TURKSAT/bip
+sudo /usr/bin/python3 /home/pi/Desktop/TURKSAT/pythonclient.py &
+#2. bip sesinden sonra (35. saniye) yer istasyonu başlatılacak
+
+
+
+sudo /home/pi/Desktop/TURKSAT/bno055 &
+sudo /home/pi/Desktop/TURKSAT/gps &
+sudo /home/pi/Desktop/TURKSAT/ms5611 &
+sudo /home/pi/Desktop/TURKSAT/ina219/ina219 &
+sudo /home/pi/Desktop/TURKSAT/flightSoftware &
+sudo /home/pi/Desktop/TURKSAT/verticalStabilization &
+sudo /home/pi/Desktop/TURKSAT/yawStabilization &
+sudo /home/pi/Desktop/TURKSAT/descentVelocity &
+
+sleep 10
+
+#sudo /usr/bin/python3 /home/pi/Desktop/TURKSAT/commands.py &
+
+exit 0
