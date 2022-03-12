@@ -16,6 +16,7 @@ pythonclient.py,
 commands.py are the scripts that communication with the ground station is provided.
 
 flightSoftware.c is the main flight software.
+
 preflightInseption.c is the script that makes the necessary arrangements on the raspberry pi before the flight.
 
 verticalStabilization.c,
